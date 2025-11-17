@@ -6,15 +6,17 @@ body {
     justify-content: center;
     align-items: center;
     margin: 0;
-    background: #424f6f;
+    background: #e77e27;
 }
+
+/* --- ghost --- */
 
 #container {
     width: 400px;
     height: 400px;
     padding: 0;
     box-sizing: border-box;
-    background: #424f6f;
+    background: #e77e27;
 }
 
 *::after,
@@ -26,7 +28,7 @@ body {
     margin: 10% auto;
     width: 80%;
     height: 80%;
-    animation: floaty 2s infinite;
+    animation: floaty 2s ease-in-out infinite;
 
 }
 
@@ -50,7 +52,7 @@ body {
     height: 36px;
     border-radius: 50%;
     background: #f2fbf1;
-    animation: floaty .2s infinite;
+    animation: floaty .2s ease-in-out infinite;
 }
 
 #spooky #body:before {
@@ -76,12 +78,12 @@ body {
     display: block;
     width: 30px;
     height: 30px;
-    background: #252c49;
+    background: #664123;
     border-radius: 50%;
 }
 
 #spooky #body #mouth {
-    background: #252c49;
+    background: #664123;
     margin: 25px auto 0;
     width: 60px;
     height: 30px;
@@ -118,11 +120,11 @@ body {
 
 #shadow {
     margin: -90px auto 0;
-    background: #252c49;
+    background: #aa5a19;
     width: 180px;
     height: 40px;
     border-radius: 50%;
-    animation: zoomy 2s infinite;
+    animation: zoomy 2s ease-in-out infinite;
 }
 
 @keyframes floaty {
@@ -148,3 +150,131 @@ body {
         transform: scale(0.8);
     }
 }
+
+
+/* --- spider --- */
+
+.spiderweb {
+    background: #fff;
+    width: 2px;
+    height: 200px;
+    margin-left: 49px;
+}
+
+.spider {
+    position: absolute;
+    display: inline-block;
+    top: 0;
+    left: 30%;
+    animation: swing 2s ease-in-out infinite;
+    transform-origin: top;
+}
+
+.spider .body {
+    background: #000;
+    width: 100px;
+    height: 80px;
+    border-radius: 50%;
+    position: relative;
+}
+
+.spider .body .eye {
+    width: 33px;
+    height: 33px;
+    background: #fff;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 20px;
+}
+
+.spider .eye.right {
+    right: 15px;
+}
+
+.spider .eye.left {
+    left: 15px;
+}
+
+.spider .eye::after {
+    content: '';
+    position: absolute;
+    margin: 55%;
+    width: 7px;
+    height: 7px;
+    background: #000;
+    border-radius: 50%;
+    animation: look 8s ease-in-out infinite;
+}
+
+.spider .legs {
+    position: absolute;
+    bottom: -10%;
+    z-index: -1;
+
+}
+
+.spider .legs .leg {
+    width: 80px;
+    height: 40px;
+    margin-top: -20px;
+    background: #000;
+    border: 5px solid transparent;
+    border-top-color: #000;
+    border-radius: 40px 40px 0 0;
+}
+
+.spider .legs.left {
+    left: -70%;
+}
+
+.spider .legs.right {
+    right: -60%;
+}
+
+.legs.left .leg:nth-child(1) {
+    transform: rotate(10deg);
+    margin-left: 10px;
+}
+
+.legs.right .leg:nth-child(1) {
+    transform: rotate(-10deg);
+    margin-left: -10px;
+}
+
+.legs.left .leg:nth-child(2) {
+    transform: rotate(-20deg);
+    margin-left: 20px;
+}
+.legs.right .leg:nth-child(2) {
+    transform: rotate(20deg);
+    margin-left: -20px;
+}
+
+.legs.left .leg:nth-child(3) {
+    transform: rotate(-30deg);
+    margin-left: 30px;
+}
+.legs.right .leg:nth-child(3) {
+    transform: rotate(30deg);
+    margin-left: -30px;
+}
+
+.legs.left .leg:nth-child(4) {
+    transform: rotate(-40deg);
+    margin-left: 40px;
+}
+.legs.right .leg:nth-child(4) {
+    transform: rotate(40deg);
+    margin-left: -40px;
+}
+
+@keyframes look {
+
+ 0%, 40%, 100% {
+    transform: translateX(0);
+ }
+ 45%, 95% {
+    transform: translateX(-110%);
+ }
+}
+
